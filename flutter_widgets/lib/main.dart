@@ -1,117 +1,275 @@
 import 'package:flutter/material.dart';
+import 'bottomNaviWidgets.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Widget Practice',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: BottomNavigation(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Widgets Practice'),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: centerWidget,
     );
   }
 }
+
+/// Container
+/// 아무것도 없는 위젯
+/// 다양한 프로퍼티 가지고 있음
+var containerWidget1 = Container(
+  color: Colors.red,
+  width: 100,
+  height: 100,
+  padding: const EdgeInsets.all(10.0),
+  margin: const EdgeInsets.all(10.0),
+  child: containerWidget2,
+);
+
+var containerWidget2 = Container(
+  color: Colors.blue,
+  width: 75,
+  height: 75,
+  padding: const EdgeInsets.all(10.0),
+  margin: const EdgeInsets.all(10.0),
+  child: containerWidget3,
+);
+
+var containerWidget3 = Container(
+  color: Colors.yellow,
+  width: 50,
+  height: 50,
+  padding: const EdgeInsets.all(10.0),
+  margin: const EdgeInsets.all(10.0),
+);
+
+/// Column
+/// 수직 방향으로 위젯들을 나란히 배치하는 위젯
+var columnWidget = Column(
+  mainAxisSize: MainAxisSize.max, // axis 꽉 채우기
+  mainAxisAlignment: MainAxisAlignment.center, // axis 정렬 가운데
+  crossAxisAlignment: CrossAxisAlignment.center, // crossAxis(defaul axis 반대 - column => 가로, row => 세로) 정렬 가운데
+  children: <Widget>[
+    containerWidget1,
+    containerWidget2,
+    containerWidget3,
+  ],
+);
+
+/// Row
+/// 수평 방향으로 위젯들을 나란히 배치하는 위젯
+var rowWidget = Row(
+  mainAxisSize: MainAxisSize.max,
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: <Widget>[
+    containerWidget1,
+    containerWidget2,
+    containerWidget3,
+  ],
+);
+
+/// Stack
+/// children 에 나열한 위젯들을 순서대로 겹치게 함
+var stackWidget = Stack(
+  children: <Widget>[
+    containerWidget1,
+    containerWidget2,
+    containerWidget3,
+  ],
+);
+
+/// SingleChildScrollView
+/// 하나의 자식을 포함하는 스크롤 위젯
+var singleChildScrollViewWidget = SingleChildScrollView(
+  child: ListBody(
+    children: List.generate(100, (index) => index).toList().map((e) => Text('$e')).toList(),
+  ),
+);
+
+/// ListView
+/// SingleChildScrollView 와 ListBody 의 조합과 동일한 효과 but 리스트 표현에 더 최적화된 위젯
+var listViewWidget = ListView(
+  scrollDirection: Axis.vertical,
+  children: <Widget>[
+    ListTile(
+      leading: Icon(Icons.home),
+      title: Text('Home'),
+      trailing: Icon(Icons.navigate_next),
+      onTap: () { print('tap home'); },
+    ),
+    ListTile(
+      leading: Icon(Icons.event),
+      title: Text('Event'),
+      trailing: Icon(Icons.navigate_next),
+      onTap: () { print('tap event'); },
+    ),
+    ListTile(
+      leading: Icon(Icons.camera),
+      title: Text('Camera'),
+      trailing: Icon(Icons.navigate_next),
+      onTap: () { print('tap camera'); },
+    ),
+  ],
+);
+
+/// GridView
+/// 열 수를 지정하여 그리드 형태로 표시하는 위젯
+var gridViewWidget = GridView.count(
+  scrollDirection: Axis.vertical,
+  crossAxisCount: 2,
+  children: <Widget>[
+    containerWidget1,
+    containerWidget2,
+    containerWidget3,
+  ],
+);
+
+/// PageView
+/// 여러 페이지를 좌우로 슬라이드 하는 위젯
+var pageViewWidget = PageView(
+  scrollDirection: Axis.vertical,
+  children: <Widget>[
+    containerWidget1,
+    containerWidget2,
+    containerWidget3,
+  ],
+);
+
+/// TabController
+var defaultTabControllerWidget = DefaultTabController(
+  length: 3, // tab number
+  child: Scaffold(
+    appBar: AppBar(
+      title: Text('tab'),
+      bottom: TabBar( // scaffold 의 bottom 프로퍼티에 TabBar 지정
+        tabs: <Widget>[ // tabs 프로퍼티에 Tab 의 리스트 지정
+          Tab(icon: Icon(Icons.tag_faces)),
+          Tab(text: '메뉴2'),
+          Tab(icon: Icon(Icons.info), text: '메뉴3',),
+        ],
+      ),
+    ),
+    body: TabBarView( // scaffold 의 body 프로퍼티에는 TabBarView 배치
+      children: <Widget>[ // children 프로퍼티에 표시할 화면 배치
+        containerWidget1,
+        containerWidget2,
+        containerWidget3,
+      ],
+    ),
+  ),
+);
+
+/// Center
+/// 중앙으로 정렬시키는 위젯
+var centerWidget = Center(
+  child: floatingActionButtonWidget,
+);
+
+/// Padding
+/// 안쪽 여백을 표현할 때 사용하는 위젯
+var paddingWidget = Padding(
+  padding: const EdgeInsets.all(40.0),
+  child: containerWidget1,
+);
+
+/// Align
+/// 자식 위젯의 정렬 방향을 정할 수 있는 위젯
+var alignWidget = Align(
+  alignment: Alignment.bottomRight,
+  child: containerWidget1,
+);
+
+/// Expanded
+/// 자식 위젯의 크기를 최대한으로 확장시켜주는 위젯
+var expandedWidget = Column(
+  children: <Widget>[
+    Expanded(
+      child: Container(color: Colors.red,),
+    ),
+    Expanded(
+      child: Container(color: Colors.blue,),
+    ),
+    Expanded(
+      child: Container(color: Colors.yellow,),
+    ),
+  ],
+);
+
+/// SizedBox
+/// 특정 크기로 만드는 위젯
+var sizedBoxWidget = SizedBox(
+  width: 100,
+  height: 100,
+  child: cardWidget,
+);
+
+/// Card
+/// 카드 형태의 모양을 제공하는 위젯
+/// 기본 크기가 0 - 자식 위젯의 크기에 따라 크기 결정
+var cardWidget = Card(
+  clipBehavior: Clip.antiAlias,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16.0),
+  ),
+  elevation: 40, // 그림자 깊이
+  child: Container(
+      width: 200,
+      height: 200,
+      color: Colors.red,
+  ),
+);
+
+/// RaisedButton
+/// 입체감을 가지는 버튼 위젯
+var raisedButtonWidget = RaisedButton(
+  child: Text('Raised Button'),
+  color: Colors.red,
+  onPressed: () {
+    print('on pressed raised button');
+  },
+);
+
+/// FlatButton
+/// 평평한 버튼
+var flatButtonWidget = FlatButton(
+  child: Text('Flat Button'),
+  color: Colors.red,
+  onPressed: () {
+    print('on pressed flat button');
+  },
+);
+
+/// IconButton
+/// 아이콘을 표시하는 버튼
+var iconButtonWidget = IconButton(
+  icon: Icon(Icons.add),
+  color: Colors.red,
+  iconSize: 150.0,
+  onPressed: () {
+    print('on pressed icon button');
+  },
+);
+
+/// FloatingActionButton
+/// 입체감 있는 둥근 버튼
+var floatingActionButtonWidget = FloatingActionButton(
+  child: Icon(Icons.add),
+  onPressed: () {
+    print('on pressed icon button');
+  },
+);
