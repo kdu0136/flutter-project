@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BottomNavigation(),
+      home: MyHomePage(),
     );
   }
 }
@@ -177,7 +177,7 @@ var defaultTabControllerWidget = DefaultTabController(
 /// Center
 /// 중앙으로 정렬시키는 위젯
 var centerWidget = Center(
-  child: floatingActionButtonWidget,
+  child: circleAvatarWidget,
 );
 
 /// Padding
@@ -272,4 +272,42 @@ var floatingActionButtonWidget = FloatingActionButton(
   onPressed: () {
     print('on pressed icon button');
   },
+);
+
+/// Text
+/// 글자 표시 위젯
+var textWidget = Text(
+  'Text Widget',
+  style: TextStyle(
+    fontSize: 40.0,
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.bold,
+    color: Colors.red,
+    letterSpacing: 4.0,
+  ),
+);
+
+/// Image
+/// 이미지 위젯
+var imageWidget1 = Image.network('https://xlab-uploads-dev.s3.ap-northeast-2.amazonaws.com/banner/banner_200511_2.webp');
+var imageWidget2 = Image.asset('assets/test4.jpg');
+
+/// Icon
+var iconWidget = Icon(
+  Icons.home,
+  color: Colors.red,
+  size: 60.0,
+);
+
+/// Progress
+/// 로딩 위젯
+var progressWidget1 = CircularProgressIndicator(); // 원 로딩
+var progressWidget2 = LinearProgressIndicator(); // 긴 막데기 로딩
+
+/// CircleAvatar
+/// 원형 위젯
+var circleAvatarWidget = CircleAvatar(
+  radius: 100,
+//  child: Icon(Icons.person,),
+  backgroundImage: NetworkImage('https://xlab-uploads-dev.s3.ap-northeast-2.amazonaws.com/banner/banner_200511_2.webp'), // 네트워크 이미지
 );
