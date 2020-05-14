@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'bottomNaviWidgets.dart';
+import 'cupertino_widget.dart';
 import 'widget_sample2.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WidgetSample2(),
+      home: CupertinoPage(),
     );
   }
 }
