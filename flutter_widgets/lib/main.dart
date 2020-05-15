@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'bottomNaviWidgets.dart';
-import 'cupertino_widget.dart';
+
+import 'navigation.dart';
 import 'widget_sample2.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,28 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CupertinoPage(),
+      home: FirstStfPage(),
+//      routes: {
+//        '/first': (context) => FirstPage(),
+////        '/second': (context) => SecondPage(),
+//        '/firstStf': (context) => FirstStfPage(),
+//        '/secondStf': (context) => SecondStfPage(),
+//      },
+//      onGenerateRoute: (settings) {
+//        final person = settings.arguments;
+//
+//        return MaterialPageRoute(builder: (context) {
+//          var builderPage;
+//          if (settings.name == '/second') {
+//            builderPage = SecondPage(
+//              person: person,
+//            );
+//          } else {
+//            builderPage = FirstPage();
+//          }
+//          return builderPage;
+//        });
+//      },
     );
   }
 }

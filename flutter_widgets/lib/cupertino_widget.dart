@@ -91,8 +91,9 @@ class _CupertinoPageState extends State<CupertinoPage> {
       context: context,
       builder: (context) =>
           Container(
-            height: 300.0,
+            height: 200.0,
             child: CupertinoPicker(
+              backgroundColor: Colors.white,
               children: _items.map((e) => Center(child: Text('No. $e'))).toList(),
               itemExtent: 50.0, // 항목 1개의 높이
               onSelectedItemChanged: (int value) {
