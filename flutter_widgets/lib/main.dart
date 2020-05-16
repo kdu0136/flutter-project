@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'navigation.dart';
 import 'widget_sample2.dart';
+import 'complicatedUI/mainPage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(ComplicatedUIApp());
 
 class MyApp extends StatelessWidget {
   @override
