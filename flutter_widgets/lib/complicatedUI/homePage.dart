@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,8 +9,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
       children: <Widget>[
         _contentTop(),
         _contentMiddle(),
@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   _contentTop() => Padding(
-    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-    child: Column(
+        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+        child: Column(
           children: <Widget>[
             _topRowContents(
               contents: <Widget>[
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-  );
+      );
 
   _topRowContents({@required List<Widget> contents}) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       ],
     );
     Widget child;
-    if (opacity ==0) {
+    if (opacity == 0) {
       child = content;
     } else {
       child = InkWell(
@@ -79,7 +79,51 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _contentMiddle() => Text('Middle');
+  final dummyMiddleItems = [
+    'https://xlab-uploads-dev.s3.ap-northeast-2.amazonaws.com/banner/banner_200511_2.webp',
+    'https://xlab-uploads-dev.s3.ap-northeast-2.amazonaws.com/banner/banner_200515_1.webp',
+    'https://xlab-uploads-dev.s3.ap-northeast-2.amazonaws.com/banner/banner_200515_2.webp',
+  ];
 
-  _contentBottom() => Text('Bottom');
+  _contentMiddle() {
+    return CarouselSlider(
+      options: CarouselOptions(
+        aspectRatio: 1,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 3),
+      ),
+      items: dummyMiddleItems.map((url) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+              width: MediaQuery.of(context).size.width, // 기기의 가로 길이
+              margin: EdgeInsets.symmetric(horizontal: 5.0), // 좌우 여백 5
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.network(
+                  url,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
+          },
+        );
+      }).toList(),
+    );
+  }
+
+  _contentBottom() {
+    final items = List.generate(10, (index) {
+      return ListTile(
+        leading: Icon(Icons.notifications_none),
+        title: Text('[Event] This is notice'),
+      );
+    });
+
+    return ListView(
+      physics: NeverScrollableScrollPhysics(), // 이 리스트의 스크롤 동작 금지
+      shrinkWrap: true, // 이 리스트가 다른 스크롤 객체 안에 있다면 true 로 설정해야 함 - main 을 list 로 감싸놨기 때문에
+      children: items,
+    );
+  }
 }
