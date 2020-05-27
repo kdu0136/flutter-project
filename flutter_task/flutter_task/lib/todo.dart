@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class Todo {
-  bool isDone = false;
+  bool isDone;
   String title;
 
-  Todo({@required this.title});
+  Todo(this.title, {this.isDone = false});
 }
