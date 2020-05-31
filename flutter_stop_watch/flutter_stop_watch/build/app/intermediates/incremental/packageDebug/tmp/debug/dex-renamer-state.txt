@@ -1,0 +1,4 @@
+#Sun May 24 14:33:33 KST 2020
+base.0=C\:\\dev\\flutter\\flutter_stop_watch\\flutter_stop_watch\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

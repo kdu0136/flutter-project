@@ -1,3 +1,4 @@
+import 'package:daliymemory/register.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -6,6 +7,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  _googleLogin() {
+    _runRegisterPage(context, 'google email');
+  }
+
+  _facebookLogin() {
+    _runRegisterPage(context, 'facebook email');
+  }
+
+  _kakaoLogin() {
+    _runRegisterPage(context, 'kakao email');
+  }
+
+  _runRegisterPage(BuildContext context, email) => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => RegisterPage(email)),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +36,6 @@ class _LoginPageState extends State<LoginPage> {
                 '하루 한장',
                 style: TextStyle(
                   fontSize: 45.0,
-//                  fontWeight: FontWeight.bold,
-                  fontFamily: 'NotoSans',
                 ),
               ),
             ),
@@ -31,15 +47,15 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text('구글 로그인'),
-                    onPressed: () => print('구글 로그인 버튼'),
+                    onPressed: _googleLogin,
                   ),
                   RaisedButton(
                     child: Text('페이스북 로그인'),
-                    onPressed: () => print('페이스북 로그인 버튼'),
+                    onPressed: _facebookLogin,
                   ),
                   RaisedButton(
                     child: Text('카카오 로그인'),
-                    onPressed: () => print('카카오 로그인 버튼'),
+                    onPressed: _kakaoLogin,
                   ),
                 ],
               ),
