@@ -8,9 +8,9 @@ extension GenderExtension on Gender {
   String getValue() {
     switch (this) {
       case Gender.MAN:
-        return '남자';
+        return 'Male';
       case Gender.WOMAN:
-        return '여자';
+        return 'Female';
       default:
         return null;
     }
