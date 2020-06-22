@@ -21,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
     _runRegisterPage(context, 'kakao email');
   }
 
+  /// create social login button widget
   Widget socialLoginBtn({@required Social social, GestureTapCallback onPress}) {
     var btnColor = social.getSymbolColor();
     return ClipOval(
@@ -32,17 +33,17 @@ class _LoginPageState extends State<LoginPage> {
             width: 70,
             height: 70,
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 3.0,
-                color: Colors.black,
-              )
-            ),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  width: 2.0,
+                  color: Colors.black,
+                )),
             child: Center(
               child: Text(
                 social.getSymbolChar(),
                 style: TextStyle(
                   fontSize: 30,
+                  fontWeight: FontWeight.bold
                 ),
               ),
             ),
@@ -61,33 +62,45 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
+      body: Stack(
         children: <Widget>[
-          Expanded(
-            child: Center(
-              child: Text(
-                '1234',
-                style: TextStyle(
-                  fontSize: 45.0,
-//                  fontFamily: 'Hanna',
-//                  fontWeight: FontWeight.bold
-                ),
+          Center(
+            child: Text(
+              '1234',
+              style: TextStyle(
+                fontSize: 45.0,
               ),
             ),
           ),
-          Expanded(
-            child: Center(
+          Padding(
+            padding: const EdgeInsets.only(bottom: 150.0, left: 20, right: 20),
+            child: Align(
+              alignment: Alignment.bottomCenter,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  socialLoginBtn(social: Social.GOOGLE, onPress: _googleLogin),
-                  socialLoginBtn(social: Social.FACEBOOK, onPress: _facebookLogin),
-                  socialLoginBtn(social: Social.KAKAO, onPress: _kakaoLogin),
+                  Text(
+                    'connect your account with',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      socialLoginBtn(
+                          social: Social.GOOGLE, onPress: _googleLogin),
+                      socialLoginBtn(
+                          social: Social.FACEBOOK, onPress: _facebookLogin),
+                      socialLoginBtn(
+                          social: Social.KAKAO, onPress: _kakaoLogin),
+                    ],
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
