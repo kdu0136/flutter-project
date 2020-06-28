@@ -23,13 +23,21 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   var _currentPageIndex = 0;
-  final _childrenPage = [HomePage(), ServicePage(), MyPage()];
+  final _childrenPage = [
+    HomePage(key: PageStorageKey('home')),
+    ServicePage(key: PageStorageKey('service')),
+    MyPage(key: PageStorageKey('myPage'))
+  ];
+  final PageStorageBucket bucket = PageStorageBucket();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
-      body: _childrenPage[_currentPageIndex],
+      body: PageStorage(
+        child: _childrenPage[_currentPageIndex],
+        bucket: bucket,
+      ),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
