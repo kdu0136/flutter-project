@@ -40,7 +40,7 @@ extension SocialExtension on Social {
       case Social.KAKAO:
         return [Colors.yellow, Colors.yellowAccent];
       default:
-        return [];
+        return [Colors.white];
     }
   }
 }
