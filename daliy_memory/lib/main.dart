@@ -1,4 +1,5 @@
 import 'package:daliymemory/login.dart';
+import 'package:daliymemory/main/mainPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Hanna',
       ),
-      home: LoginPage(),
+      home: MainPage(),
     );
   }
 }

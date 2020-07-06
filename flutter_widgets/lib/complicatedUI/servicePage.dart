@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ServicePage extends StatefulWidget {
+  const ServicePage({Key key}): super(key: key);
   @override
   _ServicePageState createState() => _ServicePageState();
 }
