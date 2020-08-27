@@ -38,22 +38,22 @@ List<Movie> movies = [
     plot: plotText,
     cast: [
       {
-        "orginalName": "James Mangold",
+        "originalName": "James Mangold",
         "movieName": "Director",
         "image": "assets/images/actor_1.png",
       },
       {
-        "orginalName": "Matt Damon",
+        "originalName": "Matt Damon",
         "movieName": "Carroll",
         "image": "assets/images/actor_2.png",
       },
       {
-        "orginalName": "Christian Bale",
+        "originalName": "Christian Bale",
         "movieName": "Ken Miles",
         "image": "assets/images/actor_3.png",
       },
       {
-        "orginalName": "Caitriona Balfe",
+        "originalName": "Caitriona Balfe",
         "movieName": "Mollie",
         "image": "assets/images/actor_4.png",
       },
@@ -73,22 +73,22 @@ List<Movie> movies = [
     plot: plotText,
     cast: [
       {
-        "orginalName": "James Mangold",
+        "originalName": "James Mangold",
         "movieName": "Director",
         "image": "assets/images/actor_1.png",
       },
       {
-        "orginalName": "Matt Damon",
+        "originalName": "Matt Damon",
         "movieName": "Carroll",
         "image": "assets/images/actor_2.png",
       },
       {
-        "orginalName": "Christian Bale",
+        "originalName": "Christian Bale",
         "movieName": "Ken Miles",
         "image": "assets/images/actor_3.png",
       },
       {
-        "orginalName": "Caitriona Balfe",
+        "originalName": "Caitriona Balfe",
         "movieName": "Mollie",
         "image": "assets/images/actor_4.png",
       },
@@ -108,22 +108,22 @@ List<Movie> movies = [
     plot: plotText,
     cast: [
       {
-        "orginalName": "James Mangold",
+        "originalName": "James Mangold",
         "movieName": "Director",
         "image": "assets/images/actor_1.png",
       },
       {
-        "orginalName": "Matt Damon",
+        "originalName": "Matt Damon",
         "movieName": "Carroll",
         "image": "assets/images/actor_2.png",
       },
       {
-        "orginalName": "Christian Bale",
+        "originalName": "Christian Bale",
         "movieName": "Ken Miles",
         "image": "assets/images/actor_3.png",
       },
       {
-        "orginalName": "Caitriona Balfe",
+        "originalName": "Caitriona Balfe",
         "movieName": "Mollie",
         "image": "assets/images/actor_4.png",
       },
