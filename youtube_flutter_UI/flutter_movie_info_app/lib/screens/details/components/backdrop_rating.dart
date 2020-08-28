@@ -15,13 +15,16 @@ class BackdropAndRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final useHeightPercent = 0.4;
+    final useWidthPercent = 0.9;
     return Container(
       // 40% of our total height
-      height: size.height * 0.4,
+      height: size.height * useHeightPercent,
       child: Stack(
         children: <Widget>[
+          // backdrop image
           Container(
-            height: size.height * 0.4 - 50,
+            height: size.height * useHeightPercent - 50,
             decoration: BoxDecoration(
               borderRadius:
               BorderRadius.only(bottomLeft: Radius.circular(50)),
@@ -37,7 +40,7 @@ class BackdropAndRating extends StatelessWidget {
             right: 0,
             child: Container(
               // it will cover 90% of our total width
-              width: size.width * 0.9,
+              width: size.width * useWidthPercent,
               height: 100,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -72,14 +75,14 @@ class BackdropAndRating extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            TextSpan(text: "10\n"),
-                            TextSpan(
-                              text: "150,212",
-                              style: TextStyle(color: kTextLightColor),
-                            ),
+                            TextSpan(text: "10"),
                           ],
                         ),
-                      )
+                      ),
+                      Text(
+                        "150,212",
+                        style: TextStyle(color: kTextLightColor),
+                      ),
                     ],
                   ),
                   // Rate this

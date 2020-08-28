@@ -9,13 +9,17 @@ class GenreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // margin each items
       margin: EdgeInsets.only(left: kDefaultPadding),
+      // padding each items
       padding: EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
         vertical: kDefaultPadding / 4, // 5 padding top and bottom
       ),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black26),
+        border: Border.all(
+          color: Colors.black26,
+        ),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(

@@ -13,6 +13,7 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      // padding each items
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: OpenContainer(
         closedElevation: 0,
@@ -26,6 +27,7 @@ class MovieCard extends StatelessWidget {
   Column buildMovieCard(BuildContext context) {
     return Column(
         children: <Widget>[
+          // poster
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -38,6 +40,7 @@ class MovieCard extends StatelessWidget {
               ),
             ),
           ),
+          // title
           Padding(
             padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
             child: Text(
@@ -47,6 +50,7 @@ class MovieCard extends StatelessWidget {
                   ),
             ),
           ),
+          // rating
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

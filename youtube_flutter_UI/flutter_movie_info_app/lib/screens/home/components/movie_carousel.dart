@@ -11,7 +11,7 @@ class MovieCarousel extends StatefulWidget {
 
 class _MovieCarouselState extends State<MovieCarousel> {
   PageController _pageController;
-  int initialPage = 1;
+  int initialPage = 0;
 
   @override
   void initState() {
@@ -37,6 +37,8 @@ class _MovieCarouselState extends State<MovieCarousel> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: AspectRatio(
+        // ratio of each page.
+        // height = 1
         aspectRatio: 0.85,
         child: PageView.builder(
           onPageChanged: (value) {
@@ -53,6 +55,7 @@ class _MovieCarouselState extends State<MovieCarousel> {
     );
   }
 
+  // build movie card list item
   Widget buildMovieSlider(int index) => AnimatedBuilder(
     animation: _pageController,
     builder: (context, child) {

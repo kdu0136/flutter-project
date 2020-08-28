@@ -24,8 +24,10 @@ class _CategoryListState extends State<CategoryList> {
     );
   }
 
+  // build category list item
   Padding buildCategory(int index, BuildContext context) {
     return Padding(
+      // padding each items
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: GestureDetector(
         onTap: () {
