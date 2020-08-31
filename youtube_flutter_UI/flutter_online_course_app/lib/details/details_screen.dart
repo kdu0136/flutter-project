@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_online_course_app/constants.dart';
+import 'package:flutter_online_course_app/model/category.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsScreen extends StatelessWidget {
+  final Category category;
+
+  const DetailsScreen({Key key, this.category}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("assets/images/ux_big.png"),
-          alignment: Alignment.topRight,
-        )),
+          image: DecorationImage(
+            image: AssetImage(category.image),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topRight,
+          ),
+        ),
         child: Column(
           children: [
             Padding(
@@ -19,16 +26,7 @@ class DetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: SvgPicture.asset("assets/icons/arrow-left.svg"),
-                      ),
-                      SvgPicture.asset("assets/icons/more-vertical.svg"),
-                    ],
-                  ),
+                  buildAppBar(context),
                   SizedBox(height: 30),
                   ClipPath(
                     clipper: BestSellerClipper(),
@@ -46,7 +44,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 16),
                   Text(
-                    "Design Thinking",
+                    category.name,
                     style: kHeadingextStyle,
                   ),
                   SizedBox(height: 16),
@@ -190,6 +188,23 @@ class DetailsScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  // build home screen app bar
+  Row buildAppBar(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: SvgPicture.asset("assets/icons/arrow-left.svg"),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: SvgPicture.asset("assets/icons/more-vertical.svg"),
+        ),
+      ],
     );
   }
 }
