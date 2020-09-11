@@ -32,4 +32,8 @@ class Post {
       shares: json["shares"],
     );
   }
+
+  @override
+  String toString() =>
+      "{\n\tuser: $user,\n\tcaption: $caption\n\timageUrl: $imageUrl\n\ttimeAgo: $timeAgo\n\tlikes: $likes\n\tcomments: $comments\n\tshares: $shares\n}";
 }

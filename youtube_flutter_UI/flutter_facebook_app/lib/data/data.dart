@@ -116,56 +116,56 @@ final List<Story> stories =
     storiesData.map((storyData) => Story.fromJson(storyData)).toList();
 final storiesData = [
   {
-    "user": onlineUsers[2],
+    "user": onlineUsersData[2],
     "imageUrl":
         'https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80',
   },
   {
-    "user": onlineUsers[6],
+    "user": onlineUsersData[6],
     "imageUrl":
         'https://images.unsplash.com/photo-1499363536502-87642509e31b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
     "isViewed": true,
   },
   {
-    "user": onlineUsers[3],
+    "user": onlineUsersData[3],
     "imageUrl":
         'https://images.unsplash.com/photo-1497262693247-aa258f96c4f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=624&q=80',
   },
   {
-    "user": onlineUsers[9],
+    "user": onlineUsersData[9],
     "imageUrl":
         'https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     "isViewed": true,
   },
   {
-    "user": onlineUsers[7],
+    "user": onlineUsersData[7],
     "imageUrl":
         'https://images.unsplash.com/photo-1475688621402-4257c812d6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80',
   },
   {
-    "user": onlineUsers[2],
+    "user": onlineUsersData[2],
     "imageUrl":
         'https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80',
   },
   {
-    "user": onlineUsers[6],
+    "user": onlineUsersData[6],
     "imageUrl":
         'https://images.unsplash.com/photo-1499363536502-87642509e31b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
     "isViewed": true,
   },
   {
-    "user": onlineUsers[3],
+    "user": onlineUsersData[3],
     "imageUrl":
         'https://images.unsplash.com/photo-1497262693247-aa258f96c4f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=624&q=80',
   },
   {
-    "user": onlineUsers[9],
+    "user": onlineUsersData[9],
     "imageUrl":
         'https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     "isViewed": true,
   },
   {
-    "user": onlineUsers[7],
+    "user": onlineUsersData[7],
     "imageUrl":
         'https://images.unsplash.com/photo-1475688621402-4257c812d6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80',
   },
@@ -175,7 +175,7 @@ final List<Post> posts =
     postsData.map((postData) => Post.fromJson(postData)).toList();
 final postsData = [
   {
-    "user": currentUser,
+    "user": currentUserData,
     "caption": 'Check out these cool puppers',
     "timeAgo": '58m',
     "imageUrl": 'https://images.unsplash.com/photo-1525253086316-d0c936c814f8',
@@ -184,7 +184,7 @@ final postsData = [
     "shares": 96,
   },
   {
-    "user": onlineUsers[5],
+    "user": onlineUsersData[5],
     "caption":
         'Please enjoy this placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     "timeAgo": '3hr',
@@ -194,7 +194,7 @@ final postsData = [
     "shares": 18,
   },
   {
-    "user": onlineUsers[4],
+    "user": onlineUsersData[4],
     "caption": 'This is a very good boi.',
     "timeAgo": '8hr',
     "imageUrl":
@@ -204,7 +204,7 @@ final postsData = [
     "shares": 27,
   },
   {
-    "user": onlineUsers[3],
+    "user": onlineUsersData[3],
     "caption": 'Adventure 🏔',
     "timeAgo": '15hr',
     "imageUrl":
@@ -214,7 +214,7 @@ final postsData = [
     "shares": 42,
   },
   {
-    "user": onlineUsers[0],
+    "user": onlineUsersData[0],
     "caption":
         'More placeholder text for the soul: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     "timeAgo": '1d',
@@ -224,7 +224,7 @@ final postsData = [
     "shares": 9,
   },
   {
-    "user": onlineUsers[9],
+    "user": onlineUsersData[9],
     "caption": 'A classic.',
     "timeAgo": '1d',
     "imageUrl":

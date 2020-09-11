@@ -13,4 +13,7 @@ class User {
       imageUrl: json["imageUrl"],
     );
   }
+
+  @override
+  String toString() => "{\n\tname: $name,\n\timageUrl: $imageUrl\n}";
 }

@@ -16,4 +16,7 @@ class Story {
       isViewed: json["isViewed"] != null ? json["isViewed"] : false,
     );
   }
+
+  @override
+  String toString() => "{\n\tuser: $user,\n\timageUrl: $imageUrl\n\tisViewed: $isViewed\n}";
 }
