@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/config/palette.dart';
 import 'package:flutter_facebook_app/models/models.dart';
-import 'package:flutter_facebook_app/widgets/profile_avatar.dart';
+import 'components.dart';
 
 class Rooms extends StatelessWidget {
   final List<User> onlineUsers;
@@ -19,7 +19,7 @@ class Rooms extends StatelessWidget {
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
         scrollDirection: Axis.horizontal,
-        itemCount: 1 + onlineUsers.length,
+        itemCount: 1 + onlineUsers.length, // 1 - create room button
         itemBuilder: (context, index) {
           if (index == 0) {
             return Padding(

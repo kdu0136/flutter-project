@@ -16,13 +16,14 @@ class ProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final radius = 20.0;
     return Stack(
       children: [
         CircleAvatar(
-          radius: 20,
+          radius: radius,
           backgroundColor: Palette.facebookBlue,
           child: CircleAvatar(
-            radius: hasBorder ? 17 : 20,
+            radius: hasBorder ? radius - 3 : radius,
             backgroundColor: Colors.grey[200],
             backgroundImage: CachedNetworkImageProvider(imageUrl),
           ),

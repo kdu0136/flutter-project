@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/models/models.dart';
-import 'package:flutter_facebook_app/widgets/widgets.dart';
+import 'components.dart';
 
 class CreatePostContainer extends StatelessWidget {
   final User currentUser;
@@ -17,15 +17,15 @@ class CreatePostContainer extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          buildProfileComment(),
+          _buildProfileComment(),
           const Divider(height: 10, thickness: 0.5),
-          buildButtons(),
+          _buildButtons(),
         ],
       ),
     );
   }
 
-  Container buildButtons() {
+  Container _buildButtons() {
     return Container(
       height: 40,
       child: Row(
@@ -62,7 +62,7 @@ class CreatePostContainer extends StatelessWidget {
     );
   }
 
-  Row buildProfileComment() {
+  Row _buildProfileComment() {
     return Row(
       children: [
         ProfileAvatar(imageUrl: currentUser.imageUrl),

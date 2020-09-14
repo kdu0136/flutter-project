@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/config/palette.dart';
 import 'package:flutter_facebook_app/models/models.dart';
-import 'package:flutter_facebook_app/widgets/profile_avatar.dart';
+import 'package:flutter_facebook_app/screens/home/widgets/profile_avatar.dart';
 
 class Stories extends StatelessWidget {
   final User currentUser;
@@ -25,7 +25,7 @@ class Stories extends StatelessWidget {
           horizontal: 8,
         ),
         scrollDirection: Axis.horizontal,
-        itemCount: 1 + stories.length,
+        itemCount: 1 + stories.length, // 1 - add to story button
         itemBuilder: (context, index) {
           if (index == 0) {
             return Padding(
@@ -64,6 +64,7 @@ class _StoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // background
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: CachedNetworkImage(
@@ -73,6 +74,7 @@ class _StoryCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        // background overlay
         Container(
           height: double.infinity,
           width: 110,
@@ -81,12 +83,13 @@ class _StoryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
+        // plus button or story user profile
         Positioned(
           top: 8,
           left: 8,
           child: isAddStory
               ? Container(
-                  height: 40,
+                  height: 40, // profile avatar radius = 20 -> height & width = 40
                   width: 40,
                   decoration: BoxDecoration(
                     color: Colors.white,

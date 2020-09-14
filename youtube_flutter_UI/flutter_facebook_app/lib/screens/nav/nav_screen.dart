@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_app/screens/nav/widgets/widgets.dart';
 import 'package:flutter_facebook_app/screens/screens.dart';
-import 'package:flutter_facebook_app/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class NavScreen extends StatefulWidget {
@@ -30,7 +30,7 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: _icons.length,
+      length: _screens.length,
       child: Scaffold(
         body: IndexedStack(
           index: _selectedIndex,
