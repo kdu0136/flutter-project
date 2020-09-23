@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'data/data.dart';
+import 'screens/home_screen.dart';
 
 class MainApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    print(sintelContent);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Netflix UI',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.black,
       ),
-      home: Container(),
+      home: HomeScreen(),
     );
   }
 }
