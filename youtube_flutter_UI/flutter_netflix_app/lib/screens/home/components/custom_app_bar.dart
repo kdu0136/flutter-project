@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_app/assets.dart';
+import 'package:flutter_netflix_app/screens/home/widgets/widgets.dart';
 
 class CustomAppBar extends StatelessWidget {
   final double scrollOffset;
@@ -27,15 +28,15 @@ class CustomAppBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _AppBarButton(
+                  AppBarButton(
                     title: "TV Shows",
                     onTap: () => print("TV Shows"),
                   ),
-                  _AppBarButton(
+                  AppBarButton(
                     title: "Movies",
                     onTap: () => print("Movies"),
                   ),
-                  _AppBarButton(
+                  AppBarButton(
                     title: "My List",
                     onTap: () => print("My List"),
                   ),
@@ -43,32 +44,6 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _AppBarButton extends StatelessWidget {
-  final String title;
-  final Function onTap;
-
-  const _AppBarButton({
-    Key key,
-    @required this.title,
-    @required this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
-          fontWeight: FontWeight.w600,
         ),
       ),
     );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_app/models/models.dart';
-import 'package:flutter_netflix_app/widget/widgets.dart';
+import 'package:flutter_netflix_app/screens/home/widgets/widgets.dart';
 
-class ContentHeader extends StatelessWidget {
+class BodyHeader extends StatelessWidget {
   final Content featuredContent;
 
-  const ContentHeader({
+  const BodyHeader({
     Key key,
     @required this.featuredContent,
   }) : super(key: key);
@@ -15,6 +15,7 @@ class ContentHeader extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
+        // header background image
         Container(
           height: 500.0,
           decoration: BoxDecoration(
@@ -24,6 +25,7 @@ class ContentHeader extends StatelessWidget {
             ),
           ),
         ),
+        // header background image overlay
         Container(
           height: 500.0,
           decoration: const BoxDecoration(
@@ -34,6 +36,7 @@ class ContentHeader extends StatelessWidget {
             ),
           ),
         ),
+        // header title text
         Positioned(
           bottom: 110.0,
           child: SizedBox(
@@ -41,6 +44,7 @@ class ContentHeader extends StatelessWidget {
             child: Image.asset(featuredContent.titleImageUrl),
           ),
         ),
+        // header buttons
         Positioned(
           left: 0,
           right: 0,
@@ -53,7 +57,7 @@ class ContentHeader extends StatelessWidget {
                 title: "List",
                 onTap: () => print("My List"),
               ),
-              _PlayButton(),
+              PlayButton(),
               VerticalIconButton(
                 icon: Icons.info_outline,
                 title: "Info",
@@ -63,28 +67,6 @@ class ContentHeader extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _PlayButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return FlatButton.icon(
-      padding: const EdgeInsets.fromLTRB(15.0, 5.0, 20.0, 5.0),
-      onPressed: () => print("Play"),
-      color: Colors.white,
-      icon: const Icon(
-        Icons.play_arrow,
-        size: 30.0,
-      ),
-      label: const Text(
-        "Play",
-        style: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
     );
   }
 }

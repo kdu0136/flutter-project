@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_app/models/models.dart';
+import 'package:flutter_netflix_app/screens/home/widgets/content_card.dart';
 
-class ContentList extends StatelessWidget {
+class Contents extends StatelessWidget {
   final String title;
   final List<Content> contentList;
-  final bool isOriginals;
+  final bool isBigImage;
 
-  const ContentList({
+  const Contents({
     Key key,
     @required this.title,
     @required this.contentList,
-    this.isOriginals = false,
+    this.isBigImage = false,
   }) : super(key: key);
 
   @override
@@ -32,27 +33,15 @@ class ContentList extends StatelessWidget {
             ),
           ),
           Container(
-            height: isOriginals ? 500.0 : 220.0,
+            height: isBigImage ? 500.0 : 220.0,
+            margin: const EdgeInsets.only(top: 6.0),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: contentList.length,
-              itemBuilder: (BuildContext context, int index) {
-                final Content content = contentList[index];
-                return GestureDetector(
-                  onTap: () => print(content.name),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                    height: isOriginals ? 400.0 : 200.0,
-                    width: isOriginals ? 200.0 : 130.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(content.imageUrl),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                );
-              },
+              itemBuilder: (BuildContext context, int index) => ContentCard(
+                content: contentList[index],
+                isBigImage: isBigImage,
+              ),
             ),
           ),
         ],
