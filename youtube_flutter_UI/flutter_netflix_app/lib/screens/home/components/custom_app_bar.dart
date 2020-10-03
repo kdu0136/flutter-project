@@ -14,8 +14,8 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        vertical: 10.0,
-        horizontal: 24.0,
+        vertical: 5.0,
+        horizontal: 10.0,
       ),
       color:
           Colors.black.withOpacity((scrollOffset / 350).clamp(0, 1).toDouble()),
@@ -29,15 +29,15 @@ class CustomAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   AppBarButton(
-                    title: "TV Shows",
+                    title: "TV 프로그램",
                     onTap: () => print("TV Shows"),
                   ),
                   AppBarButton(
-                    title: "Movies",
+                    title: "영화",
                     onTap: () => print("Movies"),
                   ),
                   AppBarButton(
-                    title: "My List",
+                    title: "내가 찜한 콘텐츠",
                     onTap: () => print("My List"),
                   ),
                 ],

@@ -38,7 +38,7 @@ class BodyHeader extends StatelessWidget {
         ),
         // header title text
         Positioned(
-          bottom: 110.0,
+          bottom: 100.0,
           child: SizedBox(
             width: 250.0,
             child: Image.asset(featuredContent.titleImageUrl),
@@ -48,19 +48,19 @@ class BodyHeader extends StatelessWidget {
         Positioned(
           left: 0,
           right: 0,
-          bottom: 40.0,
+          bottom: 30.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               VerticalIconButton(
                 icon: Icons.add,
-                title: "List",
+                title: "내가 찜한 콘텐츠",
                 onTap: () => print("My List"),
               ),
               PlayButton(),
               VerticalIconButton(
                 icon: Icons.info_outline,
-                title: "Info",
+                title: "      정보      ",
                 onTap: () => print("Info"),
               ),
             ],

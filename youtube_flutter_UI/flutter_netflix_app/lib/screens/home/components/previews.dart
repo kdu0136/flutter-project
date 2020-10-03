@@ -18,7 +18,7 @@ class Previews extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
-            "Previews",
+            "미리보기",
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,

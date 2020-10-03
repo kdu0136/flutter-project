@@ -9,7 +9,7 @@ class PlayButton extends StatelessWidget {
       color: Colors.white,
       icon: const Icon(Icons.play_arrow, size: 30.0),
       label: const Text(
-        "Play",
+        "재생",
         style: TextStyle(
           fontSize: 16.0,
           fontWeight: FontWeight.w600,

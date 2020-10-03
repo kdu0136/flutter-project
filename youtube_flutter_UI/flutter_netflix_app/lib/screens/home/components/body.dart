@@ -18,7 +18,7 @@ class _BodyState extends State<Body> {
   void initState() {
     _scrollController = ScrollController()
       ..addListener(() {
-        context.bloc<AppBarCubit>().setOffset(_scrollController.offset);
+        context.bloc<HomeAppBarCubit>().setOffset(_scrollController.offset);
       });
     super.initState();
   }
@@ -31,32 +31,30 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
     return CustomScrollView(
       controller: _scrollController,
       slivers: [
         SliverToBoxAdapter(
           child: BodyHeader(featuredContent: sintelContent),
         ),
-        SliverPadding(
-          padding: const EdgeInsets.only(top: 20.0),
-          sliver: SliverToBoxAdapter(
-            child: Previews(
-              key: PageStorageKey("previews"),
-              contentList: previews,
-            ),
+        SliverToBoxAdapter(
+          child: Previews(
+            key: PageStorageKey("previews"),
+            contentList: previews,
           ),
         ),
         SliverToBoxAdapter(
           child: Contents(
             key: PageStorageKey("myList"),
-            title: "My List",
+            title: "내가 찜한 콘텐츠",
             contentList: myList,
           ),
         ),
         SliverToBoxAdapter(
           child: Contents(
             key: PageStorageKey("originals"),
-            title: "NetFlix Originals",
+            title: "NetFlix 오리지널",
             contentList: originals,
             isBigImage: true,
           ),
@@ -66,7 +64,7 @@ class _BodyState extends State<Body> {
           sliver: SliverToBoxAdapter(
             child: Contents(
               key: PageStorageKey("trending"),
-              title: "Trending",
+              title: "지금 뜨는 콘텐츠",
               contentList: trending,
             ),
           ),

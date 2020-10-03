@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_netflix_app/cubits/app_bar/app_bar_cubit.dart';
+import 'package:flutter_netflix_app/cubits/app_bar/home_app_bar_cubit.dart';
 import 'package:flutter_netflix_app/screens/screens.dart';
 
 class NavScreen extends StatefulWidget {
@@ -18,11 +18,11 @@ class _NavScreenState extends State<NavScreen> {
   ];
 
   final Map<String, IconData> _icons = const {
-    "Home": Icons.home,
-    "Search": Icons.search,
-    "Coming Soon": Icons.queue_play_next,
-    "Downloads": Icons.file_download,
-    "More": Icons.menu,
+    "홈": Icons.home,
+    "검색": Icons.search,
+    "공개 예정": Icons.queue_play_next,
+    "저장한 콘텐츠 목록": Icons.file_download,
+    "더 보기": Icons.menu,
   };
 
   int _currentIndex = 0;
@@ -30,8 +30,8 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider<AppBarCubit>(
-        create: (context) => AppBarCubit(),
+      body: BlocProvider<HomeAppBarCubit>(
+        create: (context) => HomeAppBarCubit(),
         child: _screens[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
