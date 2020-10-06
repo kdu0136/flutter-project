@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'file:///C:/dev/flutter/youtube_flutter_UI/flutter_netflix_app/lib/screens/nav/nav_screen.dart';
+import 'package:flutter_netflix_app/screens/screens.dart';
 
 class MainApp extends StatelessWidget {
   @override

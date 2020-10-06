@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_netflix_app/cubits/app_bar/home_app_bar_cubit.dart';
+import 'package:flutter_netflix_app/cubits/app_bar/search_app_bar_cubit.dart';
 import 'package:flutter_netflix_app/screens/screens.dart';
 
 class NavScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
     HomeScreen(key: PageStorageKey("homeScreen")),
-    Scaffold(),
+    SearchScreen(key: PageStorageKey("searchScreen")),
     Scaffold(),
     Scaffold(),
     Scaffold(),
@@ -30,8 +31,15 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider<HomeAppBarCubit>(
-        create: (context) => HomeAppBarCubit(),
+      body: MultiBlocProvider (
+        providers: [
+          BlocProvider<HomeAppBarCubit> (
+            create: (context) => HomeAppBarCubit(),
+          ),
+          BlocProvider<SearchAppBarCubit> (
+            create: (context) => SearchAppBarCubit(),
+          ),
+        ],
         child: _screens[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(

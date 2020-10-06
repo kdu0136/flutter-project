@@ -28,7 +28,7 @@ class BodyHeader extends StatelessWidget {
         // header background image overlay
         Container(
           height: 500.0,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.black, Colors.transparent],
               begin: Alignment.bottomCenter,
@@ -52,16 +52,20 @@ class BodyHeader extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              VerticalIconButton(
-                icon: Icons.add,
-                title: "내가 찜한 콘텐츠",
-                onTap: () => print("My List"),
+              Expanded(
+                child: VerticalIconButton(
+                  icon: Icons.add,
+                  title: "내가 찜한 콘텐츠",
+                  onTap: () => print("My List"),
+                ),
               ),
-              PlayButton(),
-              VerticalIconButton(
-                icon: Icons.info_outline,
-                title: "      정보      ",
-                onTap: () => print("Info"),
+              Expanded(child: PlayButton()),
+              Expanded(
+                child: VerticalIconButton(
+                  icon: Icons.info_outline,
+                  title: "정보",
+                  onTap: () => print("Info"),
+                ),
               ),
             ],
           ),

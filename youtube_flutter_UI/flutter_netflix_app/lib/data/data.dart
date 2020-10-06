@@ -121,3 +121,28 @@ final trendingData = [
   {"name": 'The Crown', "imageUrl": Assets.crown},
   {"name": 'Dogs', "imageUrl": Assets.dogs},
 ];
+
+final List<Content> largestKeyword =
+    largestKeywordData.map((data) => Content.fromJson(data)).toList();
+final largestKeywordData = [
+  {"name": 'Stranger Things', "imageUrl": Assets.strangerThings},
+  {"name": 'The Witcher', "imageUrl": Assets.witcher},
+  {"name": 'The Umbrella Academy', "imageUrl": Assets.umbrellaAcademy},
+  {"name": '13 Reasons Why', "imageUrl": Assets.thirteenReasonsWhy},
+  {"name": 'The End of the F***ing World', "imageUrl": Assets.teotfw},
+  {"name": 'Explained', "imageUrl": Assets.explained},
+  {"name": 'Avatar The Last Airbender', "imageUrl": Assets.atla},
+  {"name": 'Tiger King', "imageUrl": Assets.tigerKing},
+  {"name": 'The Crown', "imageUrl": Assets.crown},
+  {"name": 'Dogs', "imageUrl": Assets.dogs},
+  {"name": 'Stranger Things', "imageUrl": Assets.strangerThings},
+  {"name": 'The Witcher', "imageUrl": Assets.witcher},
+  {"name": 'The Umbrella Academy', "imageUrl": Assets.umbrellaAcademy},
+  {"name": '13 Reasons Why', "imageUrl": Assets.thirteenReasonsWhy},
+  {"name": 'The End of the F***ing World', "imageUrl": Assets.teotfw},
+  {"name": 'Explained', "imageUrl": Assets.explained},
+  {"name": 'Avatar The Last Airbender', "imageUrl": Assets.atla},
+  {"name": 'Tiger King', "imageUrl": Assets.tigerKing},
+  {"name": 'The Crown', "imageUrl": Assets.crown},
+  {"name": 'Dogs', "imageUrl": Assets.dogs},
+];
