@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: CustomAppBar(),
+          child: BodyHeader(),
         ),
         SliverPadding(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
