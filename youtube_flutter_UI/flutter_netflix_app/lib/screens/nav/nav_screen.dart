@@ -13,7 +13,7 @@ class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
     HomeScreen(key: PageStorageKey("homeScreen")),
     SearchScreen(key: PageStorageKey("searchScreen")),
-    Scaffold(),
+    ComingSoonScreen(key: PageStorageKey("comingSoonScreen")),
     Scaffold(),
     Scaffold(),
   ];
@@ -31,12 +31,12 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MultiBlocProvider (
+      body: MultiBlocProvider(
         providers: [
-          BlocProvider<HomeAppBarCubit> (
+          BlocProvider<HomeAppBarCubit>(
             create: (context) => HomeAppBarCubit(),
           ),
-          BlocProvider<SearchAppBarCubit> (
+          BlocProvider<SearchAppBarCubit>(
             create: (context) => SearchAppBarCubit(),
           ),
         ],

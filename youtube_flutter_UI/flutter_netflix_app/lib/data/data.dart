@@ -146,3 +146,88 @@ final largestKeywordData = [
   {"name": 'The Crown', "imageUrl": Assets.crown},
   {"name": 'Dogs', "imageUrl": Assets.dogs},
 ];
+
+final List<ComingSoon> comingSoonList =
+    comingSoonData.map((data) => ComingSoon.fromJson(data)).toList();
+final comingSoonData = [
+  {
+    "name": 'Avatar The Last Airbender',
+    "imageUrl": Assets.atla,
+    "titleImageUrl": Assets.atlaTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'The Crown',
+    "imageUrl": Assets.crown,
+    "titleImageUrl": Assets.crownTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'The Umbrella Academy',
+    "imageUrl": Assets.umbrellaAcademy,
+    "titleImageUrl": Assets.umbrellaAcademyTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'Carole and Tuesday',
+    "imageUrl": Assets.caroleAndTuesday,
+    "titleImageUrl": Assets.caroleAndTuesdayTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'Black Mirror',
+    "imageUrl": Assets.blackMirror,
+    "titleImageUrl": Assets.blackMirrorTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'Avatar The Last Airbender',
+    "imageUrl": Assets.atla,
+    "titleImageUrl": Assets.atlaTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'The Crown',
+    "imageUrl": Assets.crown,
+    "titleImageUrl": Assets.crownTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'The Umbrella Academy',
+    "imageUrl": Assets.umbrellaAcademy,
+    "titleImageUrl": Assets.umbrellaAcademyTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'Carole and Tuesday',
+    "imageUrl": Assets.caroleAndTuesday,
+    "titleImageUrl": Assets.caroleAndTuesdayTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+  {
+    "name": 'Black Mirror',
+    "imageUrl": Assets.blackMirror,
+    "titleImageUrl": Assets.blackMirrorTitle,
+    "description":
+        'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
+    "comingSoonDate": "매주 수요일 새로운 에피소드 공개",
+  },
+];

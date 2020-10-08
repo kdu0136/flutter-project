@@ -16,19 +16,19 @@ class CustomAppBar extends StatefulWidget {
 
 class _CustomAppBarState extends State<CustomAppBar> {
   TextEditingController _textController;
-  
+
   @override
   void initState() {
     super.initState();
     _textController = new TextEditingController(text: widget.searchText);
   }
-  
+
   @override
   void dispose() {
     _textController.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,7 +44,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: TextField(
                   controller: _textController,
-                  onChanged: (text) => context.bloc<SearchAppBarCubit>().setText(text),
+                  onChanged: (text) =>
+                      context.bloc<SearchAppBarCubit>().setText(text),
                   cursorColor: Colors.white,
                   style: TextStyle(
                     color: Colors.white,

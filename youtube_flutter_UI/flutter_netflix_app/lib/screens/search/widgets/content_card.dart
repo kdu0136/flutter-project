@@ -23,7 +23,6 @@ class ContentCard extends StatelessWidget {
             Container(
               width: 135,
               decoration: BoxDecoration(
-                  color: Colors.red,
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                     image: AssetImage(content.imageUrl),
