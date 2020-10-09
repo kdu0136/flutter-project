@@ -14,7 +14,7 @@ class _NavScreenState extends State<NavScreen> {
     HomeScreen(key: PageStorageKey("homeScreen")),
     SearchScreen(key: PageStorageKey("searchScreen")),
     ComingSoonScreen(key: PageStorageKey("comingSoonScreen")),
-    Scaffold(),
+    SaveContentScreen(key: PageStorageKey("saveContentScreen")),
     Scaffold(),
   ];
 
