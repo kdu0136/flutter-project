@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/config/palette.dart';
 import 'package:flutter_facebook_app/models/models.dart';
+import 'package:flutter_facebook_app/responsive.dart';
 import 'package:flutter_facebook_app/screens/home/widgets/profile_avatar.dart';
 
 class Stories extends StatelessWidget {
@@ -18,7 +19,7 @@ class Stories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: Colors.white,
+      color: Responsive.isDesktop(context) ? Colors.transparent : Colors.white,
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(
           vertical: 10,
@@ -81,6 +82,15 @@ class _StoryCard extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: Palette.storyGradient,
             borderRadius: BorderRadius.circular(12),
+            boxShadow: Responsive.isDesktop(context)
+                ? const [
+                    BoxShadow(
+                      color: Colors.black26,
+                      offset: Offset(0, 2),
+                      blurRadius: 4.0,
+                    ),
+                  ]
+                : null,
           ),
         ),
         // plus button or story user profile
@@ -89,7 +99,8 @@ class _StoryCard extends StatelessWidget {
           left: 8,
           child: isAddStory
               ? Container(
-                  height: 40, // profile avatar radius = 20 -> height & width = 40
+                  height:
+                      40, // profile avatar radius = 20 -> height & width = 40
                   width: 40,
                   decoration: BoxDecoration(
                     color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/models/models.dart';
+import 'package:flutter_facebook_app/responsive.dart';
 import 'components.dart';
 
 class CreatePostContainer extends StatelessWidget {
@@ -12,15 +13,21 @@ class CreatePostContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
-      color: Colors.white,
-      child: Column(
-        children: [
-          _buildProfileComment(),
-          const Divider(height: 10, thickness: 0.5),
-          _buildButtons(),
-        ],
+    final bool isDesktop = Responsive.isDesktop(context);
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: isDesktop ? 5.0 : 0.0),
+      elevation: isDesktop ? 1.0 : 0.0,
+      shape: isDesktop ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)) : null,
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
+        color: Colors.white,
+        child: Column(
+          children: [
+            _buildProfileComment(),
+            const Divider(height: 10, thickness: 0.5),
+            _buildButtons(),
+          ],
+        ),
       ),
     );
   }

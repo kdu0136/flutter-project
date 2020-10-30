@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/config/palette.dart';
 import 'package:flutter_facebook_app/models/models.dart';
+import 'package:flutter_facebook_app/responsive.dart';
 import 'package:flutter_facebook_app/screens/home/widgets/profile_avatar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -15,20 +16,30 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _PostHeader(post: post),
-          const SizedBox(height: 4),
-          _PostContents(post: post),
-          _PostStats(post: post),
-          const Divider(),
-          _PostButtons(),
-        ],
+    final bool isDesktop = Responsive.isDesktop(context);
+    return Card(
+      margin: EdgeInsets.symmetric(
+        horizontal: isDesktop ? 5.0 : 0.0,
+        vertical: 5.0,
+      ),
+      elevation: isDesktop ? 1.0 : 0.0,
+      shape: isDesktop
+          ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+          : null,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _PostHeader(post: post),
+            const SizedBox(height: 4),
+            _PostContents(post: post),
+            _PostStats(post: post),
+            const Divider(),
+            _PostButtons(),
+          ],
+        ),
       ),
     );
   }

@@ -15,7 +15,6 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-    print('rebuild');
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 50.0),
