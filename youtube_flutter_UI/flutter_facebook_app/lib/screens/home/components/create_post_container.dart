@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_app/models/models.dart';
 import 'package:flutter_facebook_app/responsive.dart';
+import 'package:flutter_facebook_app/screens/home/widgets/widgets.dart';
 import 'components.dart';
 
 class CreatePostContainer extends StatelessWidget {

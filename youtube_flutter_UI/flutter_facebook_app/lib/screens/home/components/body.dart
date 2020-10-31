@@ -3,6 +3,7 @@ import 'package:flutter_facebook_app/config/palette.dart';
 import 'package:flutter_facebook_app/data/data.dart';
 import 'package:flutter_facebook_app/models/models.dart';
 import 'package:flutter_facebook_app/responsive.dart';
+import 'package:flutter_facebook_app/screens/home/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'components.dart';
@@ -119,8 +120,12 @@ class _HomeScreenDesktop extends StatelessWidget {
       children: [
         Flexible(
           flex: 2,
-          child: Container(
-            color: Colors.orange,
+          child:  Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: MoreOptionsList(currentUser: currentUser),
+            ),
           ),
         ),
         const Spacer(),
@@ -150,7 +155,6 @@ class _HomeScreenDesktop extends StatelessWidget {
                   child: Rooms(onlineUsers: onlineUsers),
                 ),
               ),
-
               // posts
               SliverList(
                 delegate: SliverChildBuilderDelegate(
@@ -167,8 +171,12 @@ class _HomeScreenDesktop extends StatelessWidget {
         const Spacer(),
         Flexible(
           flex: 2,
-          child: Container(
-            color: Colors.blue,
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ContactsList(users: onlineUsers),
+            ),
           ),
         ),
       ],
